@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ProductMapper">
+	<insert id="insertProduct" parameterType="com.example.demo.pojo.Product">
+		insert into product(name, location, descript, price, unit)
+		value (#{name}, #{location}, #{descript}, #{price}, #{unit});
+	</insert>
+
+	<delete id="deleteProduct" parameterType="com.example.demo.pojo.Product">
+		delete
+		from product
+		where id = #{id};
+	</delete>
+
+	<update id="updateProduct" parameterType="com.example.demo.pojo.Product">
+		update product
+		set name = #{name},
+		location = #{location},
+		descript = #{descript},
+		price = #{price},
+		unit = #{unit}
+		where id = #{id};
+	</update>
+
+	<update id="updateProductByMap" parameterType="map">
+		update product
+		<set>
+			<if test="name != null">name = #{name},</if>
+			<if test="location != null">location = #{location},</if>
+			<if test="descript != null">descript = #{descript},</if>
+			<if test="descript != null">price = #{price},</if>
+			<if test="descript != null">unit = #{unit},</if>
+		</set>
+		where id = #{id};
+	</update>
+
+	<select id="queryProductByID" parameterType="com.example.demo.pojo.Product"
+		resultType="Product">
+		select * from Product
+		where id = #{id};
+	</select>
+
+	<select id="queryAllProduct" resultType="com.example.demo.pojo.Product">
+		select * from product;
+	</select>
+
+	<select id="searchProductByNameKey" resultType="com.example.demo.pojo.Product">
+		select *
+		from product
+		where name like concat('%', #{key}, '%');
+	</select>
+</mapper>
