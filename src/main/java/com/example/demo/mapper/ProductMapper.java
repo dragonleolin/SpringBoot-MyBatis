@@ -28,5 +28,5 @@ public interface ProductMapper {
 	List<Product> queryAllProduct();
 
 	// 模糊查询
-	Product searchProductByNameKey(String key);
+	List<Product> searchProductByNameKey(String key);
 }

@@ -35,7 +35,7 @@ public class ProductController {
 	}
 	// 模糊查詢
 	@GetMapping(value = "key/{key}")
-	public Product searchProductByNameKey(@PathVariable String key) {
+	public List<Product> searchProductByNameKey(@PathVariable String key) {
 		return productMapper.searchProductByNameKey(key);
 	}
 	
