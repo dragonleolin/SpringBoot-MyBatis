@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "f0a5c51f-9a41-44a5-97b0-d0b45f1e1605",
+		"name": "搶購程式",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "蝦皮",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"account\": \"wei.che0812@gmail.com\",\r\n  \"password\": \"My0921254819\",\r\n  \"time\":\"2022/07/28 18:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reptile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reptile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

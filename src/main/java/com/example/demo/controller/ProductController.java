@@ -1,7 +1,14 @@
 package com.example.demo.controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -67,5 +74,11 @@ public class ProductController {
 		productMapper.deleteProduct(id);
 		return "刪除成功";
 	}
-
+	
+//	@RequestMapping(method = RequestMethod.POST)
+//	public String mutipleFile(@RequestBody Product product) {
+//		return "新增成功";
+//	}
+	
+	
 }
